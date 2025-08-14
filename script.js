@@ -57,3 +57,8 @@ document.querySelector(".prev").addEventListener("click", () => {
   stopAutoSlide();
   startAutoSlide();
 });
+
+
+
+
+

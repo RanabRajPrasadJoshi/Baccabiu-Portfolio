@@ -1,0 +1,22 @@
+.img-box-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 4rem;
+}
+.box{
+    /* border: 2px solid black; */
+    width: 355px;
+    height: 355px;
+
+}
+.box img{
+    width: 355px;
+}
+
+@media (max-width: 768px) {
+   .img-box-container{
+    gap: 0px;
+}
+}
