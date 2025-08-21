@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/curatedwholesale.css">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <title>子織｜Baccabi'u</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet" data-optimized-fonts="true">
+</head>
+
+<body>
+
+    <div class="nav">
+    <div class="hero">
+        <img src="assets/logo.png" alt="Logo" />
+    </div>
+
+    <!-- Hamburger Menu Button -->
+    <div class="menu-toggle" id="menu-toggle">
+        &#9776;
+    </div>
+
+    <ul class="navicons" id="navicons">
+        <li><a href="custom-projects.html">Custom Projects</a></li>
+        <li><a href="curatedwholesale.html" style="color: #d39d82;">Curated Wholesale</a></li>
+        <li><a href="conceputal-goods.html">Conceptual Goods</a></li>
+        <li><a href="materials-workshop.html">Material Workshops</a></li>
+        <li><a href="index.html">Home</a></li>
+    </ul>
+</div>
+
+
+    <section class="box-container">
+        <div id="product-container" class="products"></div>
+
+        <div class="pagination" id="pagination"></div>
+    </section>
+
+
+<section class="footer">
+    <h5>BACCABIU INTERNATIONAL LTD.</h5>
+    <a href="" target="_blank">Email: baccabiu.tw@gmail.com</a>
+    <a href="https://www.pinkoi.com/store/baccabiu" target="_blank">Store: https://www.pinkoi.com/store/baccabiu</a>
+    <a href="https://www.instagram.com/baccabiu/" target="_blank">Instagram: www.instagram.com/baccabiu</a>
+    <br>
+    <br>
+    <br>
+    <a href="https://www.meepshop.com/consultant-reservation-max?utm_source=%E6%A5%B5%E9%80%9F%E9%96%8B%E5%BA%97&utm_campaign=%E6%A5%B5%E9%80%9F%E9%96%8B%E5%BA%97_%E7%9B%B4%E9%81%94%E9%A0%90%E7%B4%84%E5%B0%88%E4%BA%BA&utm_content=baccabiu" target="_blank">meepShop Quick Store Opening</a>
+    
+</section>
+
+    <script src="nav.js"></script>
+    <script>
+    const products = [
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 4501'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 4502'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 4503'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 4504'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 4505'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 4506'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 4507'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 4508'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 4509'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 4500'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 45011'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 45012'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 45013'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 45014'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 45015'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 45016'},
+      {img: 'assets/curated-wholesale/sunflower.png', title: '羊毛毡植物 | 向日葵', price: 'NT$ 45017'},
+      
+      
+    ];
+
+    const perPage = 12; // 4 rows of 3 products
+    let currentPage = 1;
+
+    function renderProducts() {
+      const container = document.getElementById('product-container');
+      container.innerHTML = '';
+
+      const start = (currentPage - 1) * perPage;
+      const end = start + perPage;
+      const items = products.slice(start, end);
+
+      items.forEach(p => {
+        const div = document.createElement('div');
+        div.classList.add('product');
+        div.innerHTML = `
+          <img src="${p.img}" alt="${p.title}">
+          <div class="title">${p.title}</div>
+          <div class="price">${p.price}</div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function renderPagination() {
+      const pagination = document.getElementById('pagination');
+      pagination.innerHTML = '';
+
+      const totalPages = Math.ceil(products.length / perPage);
+
+      const prev = document.createElement('button');
+      prev.textContent = '<';
+      prev.disabled = currentPage === 1;
+      prev.onclick = () => { currentPage--; update(); };
+      pagination.appendChild(prev);
+
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        if (i === currentPage) btn.classList.add('active');
+        btn.onclick = () => { currentPage = i; update(); };
+        pagination.appendChild(btn);
+      }
+
+      const next = document.createElement('button');
+      next.textContent = '>';
+      next.disabled = currentPage === totalPages;
+      next.onclick = () => { currentPage++; update(); };
+      pagination.appendChild(next);
+    }
+
+    function update() {
+      renderProducts();
+      renderPagination();
+    }
+
+    update();
+  </script>
+</body>
+
+</html>

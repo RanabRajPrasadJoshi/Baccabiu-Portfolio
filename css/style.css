@@ -218,6 +218,9 @@
     .foot-detail h5, .foot-detail h6 {
         font-size: 0.9rem;
     }
+    .footer-img{
+      width: 90%;
+    }
 }
 
 @media (max-width: 480px) {
