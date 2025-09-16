@@ -20,6 +20,7 @@
   list-style: none;
   gap: 4rem;
   font-size: 14px;
+  margin-top: 2rem;
 }
 
 .navicons li a {
@@ -36,7 +37,7 @@
   left: 0;
   bottom: 0;
   width: 0%;
-  height: 2px;
+  height: 3px;
   
   background-color: #7b94ab;
   transition: width 0.3s ease;
@@ -46,13 +47,13 @@
   width: 100%;
 }
 .navicons li a:hover {
-  color: #d39d82;
+  color: #D6B7B4;
 }
 
 /* Hamburger menu styles */
 .menu-toggle {
   display: none;
-  font-size: 24px;
+  font-size: 30px;
   cursor: pointer;
 }
 
@@ -81,31 +82,101 @@
 }
 
 .hero img {
-    width: 9rem;
+    width: 14rem;
+    margin-right: 50px;
 }
 @media (max-width: 768px) {
     .hero img {
-        width: 7rem; /* Slightly smaller on tablets */
+        width: 12rem; /* Slightly smaller on tablets */
+        margin-left: -20px;
     }
 }
 
 @media (max-width: 480px) {
     .hero img {
-        width: 5rem; /* Smaller on mobile */
+        width: 8rem; /* Smaller on mobile */
+        margin-left: -20px;
     }
 }
 
-.footer{
-        color: #869da6;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+.footer {
+background: #fff;
+padding: 2rem 5%;
+color: #507883;
+font-family: Arial, sans-serif;
+}
+
+
+.footer-container {
+display: flex;
+justify-content:center;
+gap: 10rem;
+align-items: flex-start;
+flex-wrap: wrap;
+}
+
+
+.footer-info {
+max-width: 600px;
+line-height: 1.8;
+}
+
+
+.footer-info h3 {
+color: #507883;
+margin-bottom: 0.3rem;
+font-size: 1rem;
+}
+
+
+.footer-info p {
+margin: 0 0 1rem;
+font-size: 0.95rem;
+color: #507883;
+}
+
+
+.footer-icons {
+display: flex;
+gap: 1.5rem;
+align-items: center;
+flex-direction: column;
+text-align: center;
+}
+
+
+.footer-icons a svg {
+transition: transform 0.3s ease, fill 0.3s ease;
+}
+.footer-icons a p{
+color: #507883;
+text-decoration: none;
+}
+
+
+.footer-icons a:hover svg {
+transform: scale(1.1);
+fill: #305050;
+}
+.footer-icons a:hover img {
+transform: scale(1.1);
+fill: #305050;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+.footer-container {
+flex-direction: column;
+text-align: center;
+gap: 1.5rem;
+margin: auto;
         align-items: center;
-        margin-bottom: 3rem;
-    }
-    .footer a{
-        text-decoration: none;
-        color: #869da6;
-        
-    }
+}
+
+
+.footer-icons {
+justify-content: center;
+}
+}
 
