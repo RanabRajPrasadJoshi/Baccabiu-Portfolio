@@ -222,44 +222,7 @@
     
 
 
-    .footer-img {
-    width: 95%;
-    max-width: 1440px;
-    overflow: hidden;
-    height: 291px;
-    padding: 3rem 1rem;
-    background-color: #507883;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    margin: 3rem auto 3rem auto;
-    }
 
-.foot-detail {
-    text-align: center;
-    color: #f0f0e8;
-    max-width: 800px;
-}
-
-.foot-detail h5 {
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-}
-
-.foot-detail h3 {
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-}
-
-.foot-detail h6 {
-    font-size: 1.1rem;
-    font-weight: 300;
-}
 
 /* Responsive design */
 @media (max-width: 768px) {
