@@ -198,37 +198,37 @@ zh: {
 }
 };
 
-
 function setLanguage(lang) {
-document.querySelector('.lang-option.active')?.classList.remove('active');
-document.querySelector(`.lang-option[data-lang="${lang}"]`).classList.add('active');
+  // Update active button
+  document.querySelector('.lang-option.active')?.classList.remove('active');
+  document.querySelector(`.lang-option[data-lang="${lang}"]`).classList.add('active');
 
+  // Show only selected language in nav
+  document.querySelectorAll('.navicons .lang').forEach(el => {
+    el.style.display = el.classList.contains(lang) ? 'inline' : 'none';
+  });
 
-document.querySelector("a[href='custom-projects.html']").innerText = translations[lang]["custom-projects"];
-document.querySelector("a[href='curatedwholesale.html']").innerText = translations[lang]["curated-wholesale"];
-document.querySelector("a[href='conceputal-goods.html']").innerText = translations[lang]["conceptual-goods"];
-document.querySelector("a[href='materials-workshop.html']").innerText = translations[lang]["materials-workshop"];
+  // Update description texts
+  const descs = document.querySelectorAll(".description-container p");
+  if (descs[0]) descs[0].innerText = translations[lang]["desc1"];
+  if (descs[1]) descs[1].innerText = translations[lang]["desc2"];
+  if (descs[2]) descs[2].innerText = translations[lang]["desc3"];
 
-
-const descs = document.querySelectorAll(".description-container p");
-if (descs[0]) descs[0].innerText = translations[lang]["desc1"];
-if (descs[1]) descs[1].innerText = translations[lang]["desc2"];
-if (descs[2]) descs[2].innerText = translations[lang]["desc3"];
-
-
-localStorage.setItem("lang", lang);
+  // Save language to localStorage
+  localStorage.setItem("lang", lang);
 }
 
-
+// On page load
 document.addEventListener("DOMContentLoaded", () => {
-const savedLang = localStorage.getItem("lang") || "zh";
-setLanguage(savedLang);
+  const savedLang = localStorage.getItem("lang") || "zh";
+  setLanguage(savedLang);
 
+  // Language switcher buttons
+  document.querySelectorAll(".language-switcher .lang-option").forEach(option => {
+    option.addEventListener("click", () => setLanguage(option.dataset.lang));
+  });
+});
 
-document.querySelectorAll(".language-switcher .lang-option").forEach(option => {
-option.addEventListener("click", () => setLanguage(option.dataset.lang));
-});
-});
 </script>
     <script type="application/ld+json">
 {
