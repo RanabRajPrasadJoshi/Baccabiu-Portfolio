@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 
 <head>
     <meta charset="UTF-8" />
@@ -26,24 +26,22 @@
 
 <body>
 
-    <div class="nav">
-    <div class="hero">
-        <a href="index.html">
-            <img src="assets/logo.png" alt="Logo" />
-            </a>
-    </div>
+   <div class="nav">
+  <div class="hero">
+    <a href="index.html"><img src="assets/logo.png" alt="Logo" /></a>
+  </div>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
 
-    <!-- Hamburger Menu Button -->
-    <div class="menu-toggle" id="menu-toggle">
-        &#9776;
-    </div>
+  <div class="language-switcher">
+    <span class="lang-option active" data-lang="zh">中</span> | <span class="lang-option" data-lang="en">En</span>
+  </div>
 
-    <ul class="navicons" id="navicons">
-        <li><a href="custom-projects.html"> Custom Projects <br> 商務客製</a></li>
-        <li><a href="curatedwholesale.html">Curated Wholesale <br> 精选批发</a></li>
-        <li><a href="conceputal-goods.html">Conceptual Goods <br> 概念商品</a></li>
-        <li><a href="materials-workshop.html" style="color: #D6B7B4;">Material Workshops <br> 材料车间</a></li>
-    </ul>
+  <ul class="navicons" id="navicons">
+    <li><a href="custom-projects.html"><span class="lang zh">商務客製</span><span class="lang en">Custom Projects</span></a></li>
+    <li><a href="curatedwholesale.html"><span class="lang zh">選品批發</span><span class="lang en">Curated Wholesale</span></a></li>
+    <li><a href="conceputal-goods.html"><span class="lang zh">概念商品</span><span class="lang en">Conceptual Goods</span></a></li>
+    <li><a href="materials-workshop.html" style="color: #D6B7B4;"><span class="lang zh">材料教育</span><span class="lang en">Material Workshops</span></a></li>
+  </ul>
 </div>
 
 
@@ -53,6 +51,7 @@
 
 
 
+<hr class="divide-footer">
     <section class="footer">
 <div class="footer-container">
 <!-- Left side: company info -->
@@ -78,16 +77,19 @@
 
 <!-- Right side: icons -->
  <div class="right-footer">
+    <div class="searchicon">
+        <input type="text" name="" id="" placeholder="Your Email" />
+    </div>
 <div class="footer-icons">
 
 <a href="https://www.pinkoi.com/store/baccabiu" aria-label="Store" target="_blank">
 <!-- Store Icon -->
-<img src="assets/store.png" alt="" width="30" height="30"><p>Store</p>
+<img src="assets/store.png" alt="" width="25" height="25"><p>Store</p>
 
 </a>
 <a href="https://www.instagram.com/baccabiu/" aria-label="Instagram" target="_blank">
 <!-- Instagram Icon -->
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#507883" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#507883" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"/></svg>
 <p>Instragram</p>
 </a>
 
@@ -96,10 +98,60 @@
 
 </div>
 </div>
+<hr class="divide-footer" width="100%">
+<p class="copyright">© 2024 Baccabiu. All rights reserved.</p>
+
+
 </section>
 
 
+
     <script src="nav.js"></script>
+    <script>
+const translations = {
+en: {
+"custom-projects": "Custom Projects",
+"curated-wholesale": "Curated Wholesale",
+"conceptual-goods": "Conceptual Goods",
+"materials-workshop": "Material Workshops",
+},
+zh: {
+"custom-projects": "商務客製",
+"curated-wholesale": "精选批发",
+"conceptual-goods": "概念商品",
+"materials-workshop": "材料车间",
+
+}
+};
+
+function setLanguage(lang) {
+  // Update active button
+  document.querySelector('.lang-option.active')?.classList.remove('active');
+  document.querySelector(`.lang-option[data-lang="${lang}"]`).classList.add('active');
+
+  // Show only selected language in nav
+  document.querySelectorAll('.navicons .lang').forEach(el => {
+    el.style.display = el.classList.contains(lang) ? 'inline' : 'none';
+  });
+
+  // Update description texts
+ 
+  // Save language to localStorage
+  localStorage.setItem("lang", lang);
+}
+
+// On page load
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "zh";
+  setLanguage(savedLang);
+
+  // Language switcher buttons
+  document.querySelectorAll(".language-switcher .lang-option").forEach(option => {
+    option.addEventListener("click", () => setLanguage(option.dataset.lang));
+  });
+});
+
+</script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",

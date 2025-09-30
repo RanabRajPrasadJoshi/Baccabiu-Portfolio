@@ -99,7 +99,14 @@
         margin-left: -20px;
     }
 }
-
+ .divide-footer{
+   margin-bottom: 1rem;
+   width: 90%;
+   text-align: center;
+   margin: auto;
+   margin-top: 4rem;
+   color: #e5e5e5;
+  }
 .footer {
 background: #fff;
 padding: 2rem 5%;
@@ -110,7 +117,7 @@ font-family: Arial, sans-serif;
 
 .footer-container {
 display: flex;
-justify-content:center;
+justify-content:space-around;
 gap: 10rem;
 align-items: flex-start;
 flex-wrap: wrap;
@@ -127,13 +134,13 @@ line-height: 1.8;
 .footer-info h3 , .right-footer  {
 color: #507883;
 margin-bottom: 0.3rem;
-font-size: 1rem;
+font-size: 0.8rem;
 }
 
 
 .footer-info p , .right-footer  {
 margin: 0 0 1rem;
-font-size: 0.95rem;
+font-size: 0.75rem;
 color: #507883;
 }
 
@@ -175,6 +182,23 @@ fill: #305050;
     .language-switcher span { margin: 0 5px; cursor: pointer; }
     .language-switcher .active { font-weight: bold; text-decoration: underline; color: #D6B7B4; }
   
+
+.footer .searchicon input {
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  width: 15rem;
+  margin-bottom: 20px;
+}
+.copyright {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #507883;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+}
 /* Responsive */
 @media (max-width: 768px) {
 .footer-container {

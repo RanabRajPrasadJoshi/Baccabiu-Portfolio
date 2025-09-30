@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 
 <head>
     <meta charset="UTF-8" />
@@ -25,23 +25,21 @@
 <body>
 
     <div class="nav">
-    <div class="hero">
-        <a href="index.html">
-            <img src="assets/logo.png" alt="Logo" />
-            </a>
-    </div>
+  <div class="hero">
+    <a href="index.html"><img src="assets/logo.png" alt="Logo" /></a>
+  </div>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
 
-    <!-- Hamburger Menu Button -->
-    <div class="menu-toggle" id="menu-toggle">
-        &#9776;
-    </div>
+  <div class="language-switcher">
+    <span class="lang-option active" data-lang="zh">中</span> | <span class="lang-option" data-lang="en">En</span>
+  </div>
 
-    <ul class="navicons" id="navicons">
-        <li><a href="custom-projects.html" style="color: #D6B7B4;"> Custom Projects <br> 商務客製</a></li>
-        <li><a href="curatedwholesale.html">Curated Wholesale <br> 精选批发</a></li>
-        <li><a href="conceputal-goods.html">Conceptual Goods <br> 概念商品</a></li>
-        <li><a href="materials-workshop.html">Material Workshops <br> 材料车间</a></li>
-    </ul>
+  <ul class="navicons" id="navicons">
+    <li><a href="custom-projects.html" style="color: #D6B7B4;"><span class="lang zh">商務客製</span><span class="lang en">Custom Projects</span></a></li>
+    <li><a href="curatedwholesale.html"><span class="lang zh">選品批發</span><span class="lang en">Curated Wholesale</span></a></li>
+    <li><a href="conceputal-goods.html"><span class="lang zh">概念商品</span><span class="lang en">Conceptual Goods</span></a></li>
+    <li><a href="materials-workshop.html"><span class="lang zh">材料教育</span><span class="lang en">Material Workshops</span></a></li>
+  </ul>
 </div>
 
 <section class="carousel">
@@ -307,6 +305,7 @@ The final payment will be made after delivery.
 </section>
 
 
+<hr class="divide-footer">
     <section class="footer">
 <div class="footer-container">
 <!-- Left side: company info -->
@@ -332,16 +331,19 @@ The final payment will be made after delivery.
 
 <!-- Right side: icons -->
  <div class="right-footer">
+    <div class="searchicon">
+        <input type="text" name="" id="" placeholder="Your Email" />
+    </div>
 <div class="footer-icons">
 
 <a href="https://www.pinkoi.com/store/baccabiu" aria-label="Store" target="_blank">
 <!-- Store Icon -->
-<img src="assets/store.png" alt="" width="30" height="30"><p>Store</p>
+<img src="assets/store.png" alt="" width="25" height="25"><p>Store</p>
 
 </a>
 <a href="https://www.instagram.com/baccabiu/" aria-label="Instagram" target="_blank">
 <!-- Instagram Icon -->
-<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#507883" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#507883" viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-.75a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"/></svg>
 <p>Instragram</p>
 </a>
 
@@ -350,10 +352,103 @@ The final payment will be made after delivery.
 
 </div>
 </div>
+<hr class="divide-footer" width="100%">
+<p class="copyright">© 2024 Baccabiu. All rights reserved.</p>
+
+
 </section>
 
 
+
     <script src="nav.js"></script>
+    <script>
+const translations = {
+  en: {
+    "title-main": "Business Collaboration",
+    "subtitle": "Custom Production",
+    "proj1-title": "Design to Order",
+    "proj1-desc": "Share your original design with us. We’ll turn your vision into reality with custom production.",
+    "proj1-note": "* Please ensure your design is free from copyright issues. *",
+    "proj2-title": "Modify Existing Designs",
+    "proj2-desc": "Start with one of our current products. Adjust colors, sizes, or details to suit your style.",
+    "proj2-note": "* Please browse our website for reference. *",
+    "proj3-title": "Material Collaboration",
+    "proj3-desc": "Create your own unique material styles and combinations. Fabric materials / DIY material kits.",
+    "process1-title": "Contact & Discuss",
+    "process1-desc": "Share your design artwork with us for evaluation. We’ll provide suggestions on production details and techniques.",
+    "process2-title": "Confirmation & Deposit",
+    "process2-desc": "Choose your preferred colors, shapes, sizes, and production techniques. Production will start after deposit.",
+    "process3-title": "Crafting",
+    "process3-desc": "Your design will be handcrafted into a sample at our Nepal workshop.",
+    "process4-title": "Fine-Tuning",
+    "process4-desc": "We will share updates via photos/videos. You can suggest adjustments at this stage.",
+    "process5-title": "Review & Contract",
+    "process5-desc": "The sample will be sent back for review. Mass production starts after confirmation.",
+    "process6-title": "Mass Production & Shipping",
+    "process6-desc": "We’ll start production and arrange shipment. Final payment after delivery.",
+    "collab-title": "Your Ideas Are Crafted",
+    "collab-sub": "We Craft Your Ideas Into Reality",
+    "bottom-title": "Create Your Custom Collection"
+  },
+  zh: {
+    "title-main": "商務合作",
+    "subtitle": "客製量產",
+    "proj1-title": "全新設計開發",
+    "proj1-desc": "提供您的自有設計圖，我們依照圖樣製作。",
+    "proj1-note": "＊請確認無版權疑慮＊",
+    "proj2-title": "現有設計修改",
+    "proj2-desc": "以我們現有商品為基礎，調整配色、尺寸細節，打造新版本。",
+    "proj2-note": "＊請參考我們網站商品＊",
+    "proj3-title": "材料協作開發",
+    "proj3-desc": "打造專屬材料樣式與組合，織品材料 / 材料包。",
+    "process1-title": "來信諮詢",
+    "process1-desc": "提供設計圖進行評估，根據預算與數量給出建議。",
+    "process2-title": "確認/支付訂金",
+    "process2-desc": "挑選顏色、形狀、尺寸與製法，支付訂金後開始打樣。",
+    "process3-title": "打樣製作",
+    "process3-desc": "送至尼泊爾工坊進行手工打樣。",
+    "process4-title": "調整",
+    "process4-desc": "透過照片/影片確認進度，並提出修改意見。",
+    "process5-title": "審核/簽約",
+    "process5-desc": "寄回打樣品確認後簽約並開始量產。",
+    "process6-title": "量產出貨",
+    "process6-desc": "開始量產並安排出貨，尾款於交付後支付。",
+    "collab-title": "你的創意，我們實現",
+    "collab-sub": "將你的想法化為現實",
+    "bottom-title": "打造你的客製系列"
+  }
+};
+
+function setLanguage(lang) {
+  document.querySelector('.lang-option.active')?.classList.remove('active');
+  document.querySelector(`.lang-option[data-lang="${lang}"]`).classList.add('active');
+
+  // Toggle navigation text
+  document.querySelectorAll('.navicons .lang').forEach(el => {
+    el.style.display = el.classList.contains(lang) ? 'inline' : 'none';
+  });
+
+  // Update all translatable text elements
+  document.querySelectorAll("[data-translate]").forEach(el => {
+    const key = el.getAttribute("data-translate");
+    if (translations[lang][key]) {
+      el.innerText = translations[lang][key];
+    }
+  });
+
+  localStorage.setItem("lang", lang);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("lang") || "zh";
+  setLanguage(savedLang);
+
+  document.querySelectorAll(".language-switcher .lang-option").forEach(option => {
+    option.addEventListener("click", () => setLanguage(option.dataset.lang));
+  });
+});
+
+</script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
